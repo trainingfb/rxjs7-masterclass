@@ -11,7 +11,7 @@ export class ThemeDirective {
     private renderer2: Renderer2
   ) {
     this.configService.themes$.subscribe(([previewTheme, currentTheme]) => {
-      console.log(previewTheme, currentTheme);
+      // console.log(previewTheme, currentTheme);
       this.renderer2.removeClass(this.el.nativeElement, previewTheme);
       this.renderer2.addClass(this.el.nativeElement, currentTheme);
     });

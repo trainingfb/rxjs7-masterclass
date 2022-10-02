@@ -5,6 +5,7 @@
 1) `crud`: simple crud service to handle side effects and state with `Subject`s
 2) `page1`: state management with BehaviorSubject and derived states (theme and language)
 3) `page2`: cache HTTP requests (`shareReplay`)
+4) `todos` / `todos/[ID]`: reactive forms and multiple XHR ( `combineLatest` / `forkJoin` example )
 
 ## Angular / RxJS Examples:
 

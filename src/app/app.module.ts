@@ -12,6 +12,7 @@ import { NavbarComponent } from './core/components/navbar.component';
 import { ThemeDirective } from './core/directives/theme.directive';
 import { CrudComponent } from './features/crud.component';
 import { HomeComponent } from './features/home.component';
+import { TodosComponent } from './features/todos.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { HomeComponent } from './features/home.component';
     NavbarComponent,
     ThemeDirective,
     HomeComponent,
+    TodosComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +35,8 @@ import { HomeComponent } from './features/home.component';
       { path: 'page2', component: Page2Component },
       { path: 'crud', component: CrudComponent },
       { path: 'home', component: HomeComponent },
+      { path: 'todos', component: TodosComponent},
+      { path: 'todos/:id', component: TodosComponent},
       { path: '', redirectTo: 'home', pathMatch: 'full'}
     ])
   ],

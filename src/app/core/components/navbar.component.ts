@@ -10,6 +10,7 @@ import { AppConfigService } from '../services/app-config.service';
       appTheme
     >
       <button routerLink="home">home</button>
+      <button routerLink="todos">todos</button>
       <button routerLink="crud">crud</button>
       <button routerLink="page1">Page1</button>
       <button routerLink="page2">Page2</button>
