@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "geometri-1": {
+    "rxjs7-masterclass": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -40,7 +40,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/geometri-1",
+            "outputPath": "dist/rxjs7-masterclass",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -91,10 +91,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "geometri-1:build:production"
+              "browserTarget": "rxjs7-masterclass:build:production"
             },
             "development": {
-              "browserTarget": "geometri-1:build:development"
+              "browserTarget": "rxjs7-masterclass:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -102,7 +102,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "geometri-1:build"
+            "browserTarget": "rxjs7-masterclass:build"
           }
         },
         "test": {
