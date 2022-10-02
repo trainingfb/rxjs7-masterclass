@@ -2,9 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { combineLatest, forkJoin, map, startWith, switchMap } from 'rxjs';
+import { combineLatest, map, startWith } from 'rxjs';
 import { Todo } from '../model/todo';
-import { User } from '../model/user';
 
 const endpoint = 'https://jsonplaceholder.typicode.com';
 
@@ -18,39 +17,15 @@ const endpoint = 'https://jsonplaceholder.typicode.com';
     </select>
     <button (click)="next()">Next User</button>
     <hr>
-    <!--NEW-->
-    <div *ngIf="data$ | async as data">
-      <h1>{{data[0].name}}</h1>
-      <li *ngFor="let item of data[1]">
-        <input type="checkbox" [checked]="item.completed">
-        {{item.title}}
-      </li>
-    </div>
+    <li *ngFor="let item of items">
+      <input type="checkbox" [checked]="item.completed">
+      {{item.title}}
+    </li>
   `,
 })
 export class TodosComponent  {
   input = new FormControl<boolean | null>(null)
-  data$ = combineLatest([
-    this.input.valueChanges.pipe(startWith(null)),
-    this.activateRoute.params.pipe(map(params => params['id']))
-  ])
-    .pipe(
-      map(([ filter, id ]) => ({ filter, id } )),
-      // NEW
-      map(res => {
-        let todosUrl = `${endpoint}/todos?userId=${res.id}`
-        todosUrl += res.filter === null ? '' : `&completed=${res.filter}`;
-
-        const userUrl = `${endpoint}/users/${res.id}`
-        return ({ userUrl, todosUrl  })
-      }),
-      switchMap(urls => {
-        return forkJoin([
-          this.http.get<User>(urls.userUrl),
-          this.http.get<Todo[]>(urls.todosUrl),
-        ])
-      })
-    )
+  items: Todo[] = []
 
   constructor(
     private fb: FormBuilder,
@@ -58,7 +33,14 @@ export class TodosComponent  {
     private router: Router,
     private http: HttpClient
   ) {
-
+    combineLatest([
+      this.input.valueChanges.pipe(startWith(null)),
+      this.activateRoute.params.pipe(map(params => params['id']))
+    ])
+      .pipe(
+        map(([ filter, id ]) => ({ filter, id } ))
+      )
+      .subscribe(res => console.log(res))
   }
 
   next() {
