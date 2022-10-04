@@ -7,22 +7,17 @@ import { CrudService } from '../core/services/crud.service';
 
     <input
       type="text" #text
-      (keydown.enter)="crudService.add(text.value); text.value = ''"
       placeholder="Add a new user name"
     >
 
-    <li *ngFor="let u of crudService.items$ | async">
-      {{u.name}}
-      <button (click)="crudService.delete(u.id)">del</button>
+    <li>
+      TESTO
+      <button>del</button>
     </li>
 
 
   `,
 })
 export class CrudComponent  {
-
-  constructor(public crudService: CrudService) {
-    crudService.init();
-  }
 
 }

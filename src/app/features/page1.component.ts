@@ -7,17 +7,16 @@ import { AppConfigService } from '../core/services/app-config.service';
     <h1>Page 1</h1>
     <pre>Theme Management with Subject</pre>
 
-    <div> current theme: {{appConfigService.theme$ | async}} </div>
+    <div> current theme: THEMA </div>
 
-    <button (click)="appConfigService.theme = 'dark'">
+    <button>
       Change theme to dark
     </button>
 
-    <button (click)="appConfigService.theme = 'light'">
+    <button>
       Change theme to light
     </button>
   `,
 })
 export class Page1Component {
-  constructor(public appConfigService: AppConfigService) {}
 }

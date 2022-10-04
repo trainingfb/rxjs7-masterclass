@@ -31,16 +31,8 @@ export class TodosComponent  {
     private fb: FormBuilder,
     private activateRoute: ActivatedRoute,
     private router: Router,
-    private http: HttpClient
   ) {
-    combineLatest([
-      this.input.valueChanges.pipe(startWith(null)),
-      this.activateRoute.params.pipe(map(params => params['id']))
-    ])
-      .pipe(
-        map(([ filter, id ]) => ({ filter, id } ))
-      )
-      .subscribe(res => console.log(res))
+
   }
 
   next() {

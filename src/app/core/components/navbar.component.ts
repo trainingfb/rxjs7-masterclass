@@ -6,8 +6,7 @@ import { AppConfigService } from '../services/app-config.service';
   template: `
 
     <nav
-      class="navbar"
-      appTheme
+      class="navbar dark"
     >
       <button routerLink="home">home</button>
       <button routerLink="todos">todos</button>
@@ -24,9 +23,5 @@ import { AppConfigService } from '../services/app-config.service';
   `]
 })
 export class NavbarComponent {
-  constructor(
-    public appConfigService: AppConfigService
-  ) {
-    // appConfigService.theme$.subscribe(theme => console.log(theme))
-  }
+
 }

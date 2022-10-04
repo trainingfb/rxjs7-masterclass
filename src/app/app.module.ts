@@ -5,11 +5,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { DemoInterceptor } from './core/demo.interceptor';
 import { Page1Component } from './features/page1.component';
 import { Page2Component } from './features/page2.component';
 import { NavbarComponent } from './core/components/navbar.component';
-import { ThemeDirective } from './core/directives/theme.directive';
 import { CrudComponent } from './features/crud.component';
 import { HomeComponent } from './features/home.component';
 import { TodosComponent } from './features/todos.component';
@@ -21,7 +19,6 @@ import { TodosComponent } from './features/todos.component';
     Page2Component,
     CrudComponent,
     NavbarComponent,
-    ThemeDirective,
     HomeComponent,
     TodosComponent,
   ],
@@ -40,13 +37,7 @@ import { TodosComponent } from './features/todos.component';
       { path: '', redirectTo: 'home', pathMatch: 'full'}
     ])
   ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: DemoInterceptor,
-      multi: true
-    }
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
