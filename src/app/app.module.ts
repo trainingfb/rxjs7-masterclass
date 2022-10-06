@@ -11,6 +11,7 @@ import { NavbarComponent } from './core/components/navbar.component';
 import { CrudComponent } from './features/crud.component';
 import { HomeComponent } from './features/home.component';
 import { TodosComponent } from './features/todos.component';
+import { TimerComponent } from './features/timer.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { TodosComponent } from './features/todos.component';
     NavbarComponent,
     HomeComponent,
     TodosComponent,
+    TimerComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +34,7 @@ import { TodosComponent } from './features/todos.component';
       { path: 'page2', component: Page2Component },
       { path: 'crud', component: CrudComponent },
       { path: 'home', component: HomeComponent },
+      { path: 'timer', component: TimerComponent },
       { path: 'todos', component: TodosComponent},
       { path: 'todos/:id', component: TodosComponent},
       { path: '', redirectTo: 'home', pathMatch: 'full'}

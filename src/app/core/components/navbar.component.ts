@@ -11,6 +11,7 @@ import { AppConfigService } from '../services/app-config.service';
       <button routerLink="home">home</button>
       <button routerLink="todos">todos</button>
       <button routerLink="crud">crud</button>
+      <button routerLink="timer">timer</button>
       <button routerLink="page1">Page1</button>
       <button routerLink="page2">Page2</button>
     </nav>
