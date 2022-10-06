@@ -13,6 +13,7 @@ import { ThemeDirective } from './core/directives/theme.directive';
 import { CrudComponent } from './features/crud.component';
 import { HomeComponent } from './features/home.component';
 import { TodosComponent } from './features/todos.component';
+import { TimerComponent } from './features/timer.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { TodosComponent } from './features/todos.component';
     ThemeDirective,
     HomeComponent,
     TodosComponent,
+    TimerComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +36,7 @@ import { TodosComponent } from './features/todos.component';
       { path: 'page1', component: Page1Component },
       { path: 'page2', component: Page2Component },
       { path: 'crud', component: CrudComponent },
+      { path: 'timer', component: TimerComponent },
       { path: 'home', component: HomeComponent },
       { path: 'todos', component: TodosComponent},
       { path: 'todos/:id', component: TodosComponent},
