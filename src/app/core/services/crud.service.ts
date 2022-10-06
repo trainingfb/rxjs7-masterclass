@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { map } from 'rxjs';
 import { User } from '../../model/user';
+import { rxstate } from '../utils/rxstate';
 
 const API = 'https://jsonplaceholder.typicode.com';
 
@@ -9,30 +10,41 @@ const API = 'https://jsonplaceholder.typicode.com';
   providedIn: 'root'
 })
 export class CrudService {
-  private _items$ = new BehaviorSubject<User[]>([])
-  public  items$ = this._items$.asObservable()
+  public items = rxstate<User[]>([]);
 
   constructor(private http: HttpClient) { }
 
   init() {
     this.http.get<User[]>(`${API}/users`)
-      .subscribe(
-        res => this._items$.next(res)
-      )
+      .subscribe(res => this.items.set(res))
   }
 
   add(name: string) {
     this.http.post<User>(`${API}/users`, { name }).subscribe(
-      res => this._items$.getValue().push(res)
-      // or
-      // res => this._items$.next([...this._items$.getValue(), res])
+      // by value
+      // res => this.items.set(([...this.items.get(), res]))
+      // by function
+      res => this.items.set(prev => ([...prev, res]))
     );
   }
 
   delete(id: number) {
-    const index = this._items$.getValue().findIndex(u => u.id == id)
     this.http.delete(`${API}/users/${id}`).subscribe(
-      () => this._items$.getValue().splice(index, 1)
+      () => this.items.set(
+        // set value
+        this.items.get().filter(u => u.id !== id)
+        // set by function
+        // prev => prev.filter(u => u.id !== id)
+      )
     );
   }
+
+  getTotal$() {
+    return this.items.value$
+      .pipe(map(items => items.length))
+  }
 }
+
+
+
+

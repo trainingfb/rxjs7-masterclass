@@ -11,7 +11,7 @@ import { CrudService } from '../core/services/crud.service';
       placeholder="Add a new user name"
     >
 
-    <li *ngFor="let u of crudService.items$ | async">
+    <li *ngFor="let u of crudService.items.value$ | async">
       {{u.name}}
       <button (click)="crudService.delete(u.id)">del</button>
     </li>

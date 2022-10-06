@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AppConfigService } from '../services/app-config.service';
+import { CrudService } from '../services/crud.service';
 
 @Component({
   selector: 'app-navbar',
@@ -15,19 +16,17 @@ import { AppConfigService } from '../services/app-config.service';
       <button routerLink="crud">crud</button>
       <button routerLink="page1">Page1</button>
       <button routerLink="page2">Page2</button>
+      <!--<span>{{(crudService.items.value$ | async)?.length}}</span>-->
+
     </nav>
     <hr>
   `,
   styles: [`
     nav { padding: 10px}
-    .dark { background-color: #222 }
+    .dark { background-color: #222; color: white }
     .light { background-color: #ccc }
   `]
 })
 export class NavbarComponent {
-  constructor(
-    public appConfigService: AppConfigService
-  ) {
-    // appConfigService.theme$.subscribe(theme => console.log(theme))
-  }
+  constructor(public crudService: CrudService) {}
 }
