@@ -9,12 +9,12 @@ import { AppConfigService } from '../services/app-config.service';
       class="navbar dark"
     >
       <button routerLink="home">home</button>
-      <button routerLink="posts">posts</button>
       <button routerLink="todos">todos</button>
-      <button routerLink="crud">crud</button>
       <button routerLink="timer">timer</button>
-      <button routerLink="page1">Page1</button>
-      <button routerLink="page2">Page2</button>
+      <button routerLink="crud">crud</button>
+      <button routerLink="posts/1">posts (nested)</button>
+      <button routerLink="page1">Page1 (theme)</button>
+      <button routerLink="page2">Page2 (cached)</button>
     </nav>
     <hr>
   `,
