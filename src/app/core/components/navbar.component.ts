@@ -14,6 +14,7 @@ import { CrudService } from '../services/crud.service';
       <button routerLink="todos">todos</button>
       <button routerLink="timer">timer</button>
       <button routerLink="crud">crud</button>
+      <button routerLink="posts/1">posts (nested)</button>
       <button routerLink="page1">Page1 (theme)</button>
       <button routerLink="page2">Page2 (cached)</button>
       <!--<span>{{(crudService.items.value$ | async)?.length}}</span>-->

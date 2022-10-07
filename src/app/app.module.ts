@@ -14,6 +14,7 @@ import { CrudComponent } from './features/crud.component';
 import { HomeComponent } from './features/home.component';
 import { TodosComponent } from './features/todos.component';
 import { TimerComponent } from './features/timer.component';
+import { PostsComponent } from './features/posts.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { TimerComponent } from './features/timer.component';
     HomeComponent,
     TodosComponent,
     TimerComponent,
+    PostsComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +42,8 @@ import { TimerComponent } from './features/timer.component';
       { path: 'home', component: HomeComponent },
       { path: 'todos', component: TodosComponent},
       { path: 'todos/:id', component: TodosComponent},
+      { path: 'posts', component: PostsComponent},
+      { path: 'posts/:id', component: PostsComponent},
       { path: '', redirectTo: 'home', pathMatch: 'full'}
     ])
   ],
