@@ -2,10 +2,12 @@
 
 ## Examples in Repo
 
-1) `/crud`: simple crud service to handle side effects and state with `Subject`s
-2`/todos` / `todos/[ID]`: reactive forms and multiple XHR ( `combineLatest` / `forkJoin` example )
-3`/page1`: state management with BehaviorSubject and derived states (theme and language)
-4`/page2`: cache HTTP requests (`shareReplay`)
+* `/crud`: simple crud service to handle side effects and state with `Subject`s
+* `/todos` / `todos/[ID]`: reactive forms and multiple XHR ( `combineLatest` / `forkJoin` example )
+* `/page1`: state management with BehaviorSubject and derived states (theme and language)
+* `/page2`: cache HTTP requests (`shareReplay`)
+* `timer`: example with `shareReplay`
+* `todos`: sequence of observables (angular router + flattening operators)
 
 ## Angular / RxJS Examples:
 
@@ -24,4 +26,4 @@
 
 ## Slides
 
-• RxJS and Multicast Intro: COMING SOON
+• [RxJS Slides: flatterning operators, multicast, subjects, `share` vs `shareReplay`](https://www.slideshare.net/secret/zmanMoPW25umOL)
