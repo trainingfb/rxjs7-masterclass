@@ -10,6 +10,7 @@ import { Page2Component } from './features/page2.component';
 import { NavbarComponent } from './core/components/navbar.component';
 import { CrudComponent } from './features/crud.component';
 import { HomeComponent } from './features/home.component';
+import { PostsComponent } from './features/posts.component';
 import { TodosComponent } from './features/todos.component';
 import { TimerComponent } from './features/timer.component';
 
@@ -37,6 +38,8 @@ import { TimerComponent } from './features/timer.component';
       { path: 'timer', component: TimerComponent },
       { path: 'todos', component: TodosComponent},
       { path: 'todos/:id', component: TodosComponent},
+      { path: 'posts', component: PostsComponent},
+      { path: 'posts/:id', component: PostsComponent},
       { path: '', redirectTo: 'home', pathMatch: 'full'}
     ])
   ],
