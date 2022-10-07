@@ -15,6 +15,9 @@ export class Page2Component  {
 
   constructor(userService: UsersService) {
     this.userService = userService;
-    userService.getUsers().subscribe(res => this.items = res)
+    userService.users$.subscribe(res => {
+      console.log('page2', res)
+      this.items = res
+    })
   }
 }
