@@ -6,7 +6,8 @@ import { TimerService } from '../core/services/timer.service';
 @Component({
   selector: 'app-timer',
   template: `
-    Hello Angular 14 / RxJS 7
+    <h1>Timer Example</h1>
+    <pre>shareReplay()</pre>
 
     <h1>{{timerService.timer$ | async}}</h1>
 
